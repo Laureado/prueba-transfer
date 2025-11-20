@@ -1,0 +1,60 @@
+// function qtySum() {
+// 	for (var t = document.getElementsByName("adultos"), e = document.getElementsByName("ninos"), n = document.getElementsByName("infantes"), a = 0, s = 0, l = 0, o = 0; o < t.length; o++) parseInt(t[o].value) && (a += parseInt(t[o].value));
+// 	for (o = 0; o < e.length; o++) parseInt(e[o].value) && (s += parseInt(e[o].value));
+// 	for (o = 0; o < n.length; o++) parseInt(n[o].value) && (l += parseInt(n[o].value));
+// 	document.querySelector(".qtyTotal").innerHTML = a + s + l, $("#adultos_tours").val(a), $("#ninos_tours").val(s), $("#infantes_tours").val(l), $("#adultos_transfer").val(a), $("#ninos_transfer").val(s), $("#infantes_transfer").val(l)
+// }
+// qtySum(), $(function () {
+// 	$(".qtyButtons input").after('<div class="qtyInc bx-s-g"></div>'), $(".qtyButtons input").before('<div class="qtyDec bx-s-g"></div>'), $(".qtyDec, .qtyInc").on("click", function () {
+// 		var t = $(this),
+// 			e = t.parent().find("input").val();
+// 		if (t.hasClass("qtyInc")) var n = parseFloat(e) + 1;
+// 		else if (e > 0) n = parseFloat(e) - 1;
+// 		else n = 0;
+// 		t.parent().find("input").val(n), qtySum(), $(".qtyTotal").addClass("rotate-x")
+// 	}), document.querySelector(".qtyTotal").addEventListener("animationend", function () {
+// 		$(".qtyTotal").removeClass("rotate-x")
+// 	})
+// });
+
+function qtySum() {
+    var t = document.getElementsByName("adultos"),
+        e = document.getElementsByName("ninos"),
+        n = document.getElementsByName("infantes"),
+        a = 0, s = 0, l = 0, o = 0;
+    for (; o < t.length; o++) parseInt(t[o].value) && (a += parseInt(t[o].value));
+    for (o = 0; o < e.length; o++) parseInt(e[o].value) && (s += parseInt(e[o].value));
+    for (o = 0; o < n.length; o++) parseInt(n[o].value) && (l += parseInt(n[o].value));
+    var qtyTotalEl = document.querySelector(".qtyTotal");
+    if (qtyTotalEl) {
+        qtyTotalEl.innerHTML = a + s + l;
+    }
+    $("#adultos_tours").val(a);
+    $("#ninos_tours").val(s);
+    $("#infantes_tours").val(l);
+    $("#adultos_transfer").val(a);
+    $("#ninos_transfer").val(s);
+    $("#infantes_transfer").val(l);
+}
+qtySum();
+$(function () {
+    $(".qtyButtons input").after('<div class="qtyInc bx-s-g"></div>');
+    $(".qtyButtons input").before('<div class="qtyDec bx-s-g"></div>');
+    $(".qtyDec, .qtyInc").on("click", function () {
+        var t = $(this),
+            e = t.parent().find("input").val();
+        var n;
+        if (t.hasClass("qtyInc")) n = parseFloat(e) + 1;
+        else if (e > 0) n = parseFloat(e) - 1;
+        else n = 0;
+        t.parent().find("input").val(n);
+        qtySum();
+        $(".qtyTotal").addClass("rotate-x");
+    });
+    var qtyTotalEl = document.querySelector(".qtyTotal");
+    if (qtyTotalEl) {
+        qtyTotalEl.addEventListener("animationend", function () {
+            $(".qtyTotal").removeClass("rotate-x");
+        });
+    }
+});

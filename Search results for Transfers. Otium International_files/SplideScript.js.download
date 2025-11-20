@@ -1,0 +1,31 @@
+function sliderCard(pi, pn, isInCarousel = 0){  
+    for (let i = pi; i <= pn; i++) {
+        inicializarSplide('#carousel-' + i, isInCarousel);
+    }
+}
+    function inicializarSplide(id, isInCarousel) {
+
+        var config = {
+            type: 'slide',
+            perPage: 1,
+            pagination: true,
+            arrows: true,
+            lazyLoad: 'nearby', 
+        }
+
+        if (isInCarousel) {
+            config.breakpoints = { 
+                991: { pagination: false, },
+            };
+        }
+
+        var splide = new Splide(id, config).mount();
+
+        if (splide.length === 1) {
+            $(id).find('.splide__arrows').hide();
+        }
+        return splide;
+    }
+
+
+
