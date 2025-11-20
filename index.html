@@ -44123,8 +44123,6 @@
 			$("#"+pasajero+"_text"+nro_traslado+""+item_traslado).html(totalNuevo);
 			$("#"+pasajero+nro_traslado+""+item_traslado).val(totalNuevo);
 
-			calcular_precio_silla(nro_traslado,item_traslado);
-			aplicar_sillas(nro_traslado,item_traslado);
 
 			if(totalNuevo == pasajeroMinimo) {
 				$(e).parent().find('.qtyDown').addClass('disable-add');
