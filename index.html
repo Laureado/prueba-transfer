@@ -42960,15 +42960,15 @@
 
 										</div>
 										<div class="col-lg-6 col-12">
-											<a href="http://localhost/otiumtour/#" class="ltr-20 ltr-1567b0" style="line-height:1.1;">Nombre de la excusión</a>
+											<a href="http://localhost/otiumtour/#" class="ltr-20 ltr-1567b0" style="line-height:1.1;">Nombre de la excusión2</a>
 											<div class="m-b-10">
 												<i class="material-symbols-outlined align-middle notranslate ltr-666666">schedule</i>
 												<span class="align-middle ltr-999999">
-													00:20 - 08:00 Horas
+													01:00 - 02:00 Horas
 												</span>
 											</div>
 											<p class="ltr-666666 m-b-10">
-												Descripción corta de dos lineas, un resumen de no mas de 90 caracteres aproximadamente bla bla…
+												Descripción corta de las caracteristicas
 											</p>
 											<a href="http://localhost/otiumtour/#" target="_blank" class="ltr-1567b0">
 												<span class="txt-underline align-middle">Ver más información</span>
@@ -44381,7 +44381,7 @@ function agregar_vuelo(tipo,modal){
 	console.log('opcion=addVuelo&origen='+origen+'&destino='+destino+'&nro_traslado='+nro_traslado+'&item_traslado='+item_traslado+'&aereolinea='+aereolinea+'&fecha='+fecha+'&vuelo='+vuelo+'&id_vuelo_temp='+id_vuelo_temp+'&tipo_traslado='+tipo_traslado+'&hora='+hora);
 	jQuery.ajax({
 		beforeSend: function(){       
-			HoldOn.open('sk-circle');  
+
 		},
 		type: 'POST',
 		url: 'ajax/ajaxtraslados.php',	
@@ -44472,7 +44472,7 @@ function enviar_mail_vuelo(){
 	if (nombre != '' && email != '') {
 		jQuery.ajax({
 			beforeSend: function(){       
-				HoldOn.open('sk-circle');  
+
 			},
 			type: 'POST',
 			url: 'ajax/ajaxtraslados.php',
@@ -44523,7 +44523,7 @@ function validar_vuelo(nro_traslado,item_traslado){
 		console.log('opcion=validar_vuelo&valores_paxs='+valores_paxs+'&vuelo='+vuelo_transfer+'&tipo_vehiculo='+tipo_vehiculo+'&fecha_referencia='+fecha_referencia+'&privado='+privado+'&tipo_traslado='+tipo_traslado+'&origen='+origen+'&destino='+destino+"&lang="+localStorage.langFrontMelia);
 		jQuery.ajax({
 				beforeSend: function(){ 
-				HoldOn.open('sk-circle');                   
+                
 				},
 				type: 'POST',
 				url: 'ajax/ajaxtraslados.php',
@@ -44594,7 +44594,7 @@ function cargar_tipov(nro_traslado,item_traslado){
    option_value="";
    jQuery.ajax({ 
 		beforeSend: function(){       
-			HoldOn.open('sk-circle');  
+
 		},
 		type: 'POST',
 		url: 'ajax/ajaxtraslados.php',
@@ -44757,7 +44757,7 @@ function buscarTraslados(){
 					jQuery("#searchTraslados").css('display','none');
 					jQuery("#loadingTraslados").css('display','');
 					document.getElementById("buscaTransfer").action = './en/transfers-results';
-					HoldOn.open("sk-circle");
+
 					document.getElementById("buscaTransfer").submit();
                } else {
                   alert(app.lang.alert_busqueda_validacion4);
@@ -44776,7 +44776,7 @@ function buscarTraslados(){
 						jQuery("#searchTraslados").css('display','none');
 						jQuery("#loadingTraslados").css('display','');                  
 						document.getElementById("buscaTransfer").action = './en/transfers-results';
-						HoldOn.open("sk-circle");
+
 						document.getElementById("buscaTransfer").submit(); 
                   } else {
                      alert(app.lang.alert_busqueda_validacion6);
@@ -44984,7 +44984,7 @@ function agregarItemCarrito(adultos){
          if (nro_servicios > 0 && adultos > 0) {
             jQuery.ajax({
                beforeSend: function(){       
-                  HoldOn.open('sk-circle');               
+           
                },
                type: 'POST',
                url: 'ajax/ajax.php',
@@ -45173,7 +45173,7 @@ var arrSillas=["Group 0: 0 - 10 kg / 0 - 76 cm",
 		console.log('opcion=buscarUnidades&paxs='+total_paxs+'&vuelo='+vuelo_transfer+'&tipo_vehiculo='+tipo_vehiculo+'&fecha_referencia='+fecha_referencia+'&privado='+privado+'&tipo_traslado='+tipo_traslado+'&origen='+origen+'&destino='+destino+'&paxs_adultos='+paxs_adultos+'&paxs_ninos='+paxs_ninos+'&paxs_sillas_infantes='+paxs_sillasI+'&paxs_sillas_ninos='+paxs_sillasN+"&lang="+localStorage.langFrontMelia);
 		jQuery.ajax({
 				beforeSend: function(){ 
-				HoldOn.open('sk-circle');                   
+           
 				},
 				type: 'POST',
 				url: 'ajax/ajaxtraslados.php',
@@ -53363,7 +53363,7 @@ var arrSillas=["Group 0: 0 - 10 kg / 0 - 76 cm",
 					}
 					if(cuponeli == 1){
                    	 	alert("El cupon ha expirado, por favor intente aplicarlo nuevamente");
-                   	 	HoldOn.open('sk-circle');  
+
                    		location.href=jQuery("#url").val();
                  	 }
 
